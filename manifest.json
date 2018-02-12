@@ -1,0 +1,33 @@
+{
+    "manifest_version": 2,
+  
+    "name": "Browser Capture Tool",
+    "description": "Browser Capture Tool",
+    "version": "1.0",
+  
+    "browser_action": {
+      "default_icon": "icon.png",
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["<all_urls>"],
+            "js": ["script.js","jquery-3.3.1.min.js","piexif.js","page.js"]
+        }
+    ],
+    "commands": {
+      "_execute_browser_action":{
+        "suggested_key": {
+          "default": "Ctrl+Shift+A"
+        }
+      }
+    },
+    "permissions": [
+      "activeTab",
+      "storage",
+      "tabs",
+      "http://*/*", 
+      "https://*/*",
+      "notifications"
+    ]
+  }
